@@ -1,17 +1,11 @@
-/*
-1. Ter a resposta do computador
-2. Ter a resposta do user
-3. Comparar as duas e ver quem ganhou
-*/
-
 function getComputerChoice () {
     let randomNumber = Math.ceil(Math.random() * 3);
     if (randomNumber === 1) {
-        return "Rock";
+        return 'Rock';
     } else if (randomNumber === 2) {
-        return "Paper";
+        return 'Paper';
     } else {
-        return "Scissors";
+        return 'Scissors';
     };
 };
 
@@ -22,23 +16,31 @@ function roundResult (playerSelection, computerSelection) {
     computerSelection = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
     if (playerSelection === computerSelection) {
         return "It's a draw!";
-    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        return "You win! " + playerSelection + " beats " + computerSelection;
-    } else if (playerSelection === "Scissors" && computerSelection === "Paper"){
-        return "You win! " + playerSelection + " beats " + computerSelection;
-    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        return "You win! " + playerSelection + " beats " + computerSelection;
+    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+        return 'You win! ' + playerSelection + ' beats ' + computerSelection;
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Paper'){
+        return 'You win! ' + playerSelection + ' beats ' + computerSelection;
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        return 'You win! ' + playerSelection + ' beats ' + computerSelection;
     } else {
-    return "You lose! " + computerSelection + " beats " + playerSelection;
+    return 'You lose! ' + computerSelection + ' beats ' + playerSelection;
     }
 }
+const div = document.querySelector('div')
 
-function game() {
-    for (i = 1; i <= 5; i++) {
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("What do you want to play?"); //isto está a dar TypeError pq estou a passar por cima da linha 19 acho
-        console.log(roundResult (playerSelection, computerSelection));
-    }
-}
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    div.textContent = roundResult ('Rock', getComputerChoice());
+})
 
-console.log(game());
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    div.textContent = roundResult ('Paper', getComputerChoice());
+})
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    div.textContent = roundResult ('Scissors', getComputerChoice());
+})
+
+// function 
