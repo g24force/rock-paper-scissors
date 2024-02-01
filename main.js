@@ -24,7 +24,7 @@ function roundResult (playerSelection, computerSelection) {
         return 'You win! ' + playerSelection + ' beats ' + computerSelection;
     } else {
     return 'You lose! ' + computerSelection + ' beats ' + playerSelection;
-    }
+    };
 }
 const div = document.querySelector('div')
 
@@ -43,4 +43,20 @@ scissors.addEventListener('click', () => {
     div.textContent = roundResult ('Scissors', getComputerChoice());
 })
 
-// function 
+let playerScore = 0;
+let computerScore = 0;
+
+const currentScore = document.querySelector('#current-score');
+
+for (i = 1; i <= playerScore || i <= computerScore; i++) {
+    if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+        let playerScore = playerScore + 1;
+        currentScore.textContent = "Player " + playerScore + " : " + computerScore;
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Paper'){
+        return 'You win! ' + playerSelection + ' beats ' + computerSelection;
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        return 'You win! ' + playerSelection + ' beats ' + computerSelection;
+    } else {
+    return 'You lose! ' + computerSelection + ' beats ' + playerSelection;
+    };
+}
