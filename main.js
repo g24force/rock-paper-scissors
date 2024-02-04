@@ -40,19 +40,19 @@ const currentScore = document.querySelector('#current-score');
     }  
 // }
 
-const div = document.querySelector('div')
+const resultDisplay = document.querySelector('#result-display')
 
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
-    div.textContent = roundResult ('Rock', getComputerChoice());
+    resultDisplay.textContent = roundResult ('Rock', getComputerChoice());
 })
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
-    div.textContent = roundResult ('Paper', getComputerChoice());
+    resultDisplay.textContent = roundResult ('Paper', getComputerChoice());
 })
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
-    div.textContent = roundResult ('Scissors', getComputerChoice());
+    resultDisplay.textContent = roundResult ('Scissors', getComputerChoice());
 })
