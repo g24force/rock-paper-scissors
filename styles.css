@@ -48,3 +48,8 @@ button {
 #round-winner {
     font-size: 25px;
 }
+
+#game-winner {
+    color: red;
+    font-size: 40px;
+}
