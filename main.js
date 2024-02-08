@@ -79,4 +79,4 @@ function playRound (playerChoice) {
         gameWinner.textContent = 'Computer wins the game!';
         display.appendChild(restartButton);
     }
-}
+};
